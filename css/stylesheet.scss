@@ -1,0 +1,1461 @@
+@charset "utf-8";
+
+@mixin brackets($pt, $pb, $color) {
+  .brackets {
+    display: inline-block;
+    width: calc(100% - 40px);
+    max-width: 860px;
+    position: relative;
+    padding: $pt 0 $pb;
+
+    &::before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      border-top: 4px solid $color;
+      border-left: 4px solid $color;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      border-right: 4px solid $color;
+      border-bottom: 4px solid $color;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+body {
+  text-align: center;
+}
+
+.brsp {
+  display: none;
+}
+
+.back-btn {
+  width: 72px;
+  height: 72px;
+  position: fixed;
+  right: 50px;
+  bottom: 90px;
+  font-size: 30px;
+  line-height: 72px;
+  background-color: #ececec;
+  z-index: 1;
+
+  a {
+    color: #333;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .header-logo {
+      display: flex;
+      padding: calc((75px - 44.65px) / 2) 0;
+
+      img {
+        width: 128px;
+      }
+
+      p {
+        display: inline-block;
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        color: #333;
+        align-self: flex-end;
+        margin-left: 3px;
+      }
+    }
+
+    .header-form {
+      a {
+        display: block;
+        font-family: "メイリオ";
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        color: #fff;
+        background-color: #da6b64;
+        padding: 11px 40px;
+        border-radius: 25px;
+        vertical-align: middle;
+        margin-top: 15.5px;
+      }
+    }
+
+    .header-document {
+      display: none;
+    }
+  }
+}
+
+.eyecatch {
+  height: 500px;
+  background-image: url(../images/bg/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  margin-top: 75px;
+
+  h1 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 317px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    color: #333;
+  }
+}
+
+.trytoget-skill {
+  background-color: #ebb94d;
+  padding: 30px 0;
+
+  p:first-of-type {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  p:nth-child(2) {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 1.5px;
+    color: #c7254e;
+
+    span {
+      background-color: #f9f2f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  }
+
+  a {
+    width: 100%;
+    max-width: 1028px;
+    display: inline-block;
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background-color: #da6b64;
+    padding: 30px 120px;
+    border-radius: 50px;
+    margin: 45px auto;
+  }
+
+  .graduates {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 34px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin: 25px 0;
+  }
+
+  .sns-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    button {
+      height: 20px;
+      font-family: "メイリオ";
+      font-size: 11px;
+      line-height: 18px;
+      letter-spacing: 1.5px;
+      color: #fff;
+      border-radius: 3px;
+      margin: 0 2px;
+    }
+
+    .twitter {
+      font-weight: 500;
+      background-color: #1b95e0;
+
+      &:hover {
+        background-color: #0c7abf;
+      }
+
+      i {
+        margin-right: 3px;
+      }
+    }
+
+    .fav {
+      font-weight: 500;
+      background-color: #1877F2;
+      vertical-align: middle;
+
+      img {
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+
+    .share {
+      font-weight: 400;
+      background-color: #1877F2;
+    }
+  }
+}
+
+.really-freedom {
+  height: 587px;
+  padding: 40px 0;
+  background-image: url(../images/bg/introbottom.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    @include brackets(35px, 25px, #ebb94d);
+  }
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin: 20px 0;
+
+    .power {
+      font-weight: 700;
+      background: linear-gradient(transparent 70%, #ebb94d 30%);
+    }
+  }
+}
+
+.about-isara {
+  background-color: #fef5e0;
+  padding-bottom: 40px;
+
+  .about {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-family: "メイリオ";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 80px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background-color: #ebb94d;
+    margin: 0 auto;
+    transform: translateY(-50%);
+  }
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    @include brackets(35px, 25px, #ebb94d);
+  }
+
+  .earn {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-top: 40px;
+  }
+
+  .five-skills-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    border: 2px solid #ebb94d;
+    border-radius: 5px;
+    margin: 30px auto;
+
+    h3 {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 1.5px;
+      color: #333;
+    }
+
+    .five-skills {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+
+      .skill {
+        padding: 20px 14px 10px;
+
+        p {
+          font-family: "メイリオ";
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 19px;
+          letter-spacing: 1.5px;
+          color: #333;
+          margin: 4px 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.about-isara2 {
+  background-image: url(../images/bg/aboutsecondbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .container > p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    span {
+      color: #ebb94d;
+    }
+  }
+
+  .step-wrapper {
+    display: flex;
+    justify-content: flex-start;
+
+    .step {
+      width: 32%;
+      border-radius: 5px;
+      padding: 30px 30px 20px;
+      background-color: #fff;
+
+      &:first-of-type, &:nth-child(2) {
+        margin-right: 1.5%;
+      }
+
+      .num {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1.5px;
+        color: #fff;
+        background-color: #ebb94d;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+
+      .time {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .content {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1.5px;
+        color: #000;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.about-isara3 {
+  background-color: #016ea9;
+  padding: 40px 0;
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+
+    span {
+      color: #ebb94d;
+    }
+  }
+}
+
+.leaning {
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  h2 + p {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin: 35px 0 40px;
+  }
+
+  .ability-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .ability {
+      width: 180px;
+      margin: 0 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  p:last-of-type {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-top: 40px;
+  }
+}
+
+.three-merits {
+  background-color: #fef5e0;
+  padding: 40px 0 50px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    @include brackets(15px, 15px, #ebb94d);
+
+    .span {
+      font-size: 20px;
+    }
+  }
+
+  .merit-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+
+    .merit {
+      width: 32%;
+      margin: 0 15px;
+      text-align: left;
+
+      .img {
+        width: 100%;
+        height: 180px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &1 {
+          background-image: url(../images/bg/learnfromfreelancer.jpg);
+        }
+
+        &2 {
+          background-image: url(../images/bg/learnfromprojects.jpg);
+        }
+
+        &3 {
+          background-image: url(../images/bg/actuallyfree.jpg);
+        }
+      }
+
+      .heading {
+        font-family: "メイリオ";
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 1.5px;
+        color: #ebb94d;
+        margin-top: 8px;
+      }
+
+      .txt {
+        font-family: "メイリオ";
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1.5px;
+        color: #333;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .support {
+    background-color: #fff;
+    padding: 40px 0 50px;
+    border: 2px solid #ebb94d;
+    border-radius: 5px;
+    margin-top: 50px;
+
+    h3 {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 45px;
+      letter-spacing: 1.5px;
+      color: #ebb94d;
+      margin-bottom: 10px;
+    }
+
+    p:first-of-type {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 1.5px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p:last-of-type {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 1.5px;
+      color: #333;
+    }
+  }
+
+  .support ~ p {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-top: 40px;
+  }
+}
+
+.member {
+  background-image: url(../images/bg/teacherbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+  }
+
+  h2 ~ p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-top: 32px;
+  }
+
+  .teacher-wrapper {
+    width: 810px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    .teacher {
+      width: 375px;
+      position: relative;
+      margin: 210px 15px 0;
+
+      img {
+        position: absolute;
+        top: -160px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .square {
+        border-radius: 50%;
+      }
+
+      .teacher-txt {
+        font-family: "メイリオ";
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1.5px;
+        color: #fff;
+        padding: 40px;
+        border: 3px solid #fff;
+
+        .kind, .name {
+          margin-bottom: 10px;
+        }
+
+        .content {
+          text-align: left;
+          margin-bottom: 10px;
+        }
+
+        .mb20 {
+          margin-bottom: 20px;
+        }
+
+        .mb30 {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+.earn-question {
+  background-color: #ebb94d;
+  padding: 40px 0 15px;
+
+  p {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-family: "メイリオ";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 80px;
+    letter-spacing: 1.5px;
+    color: #ebb94d;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    @include brackets(15px, 15px, #fff);
+  }
+
+  &::after {
+    content: "";
+    border-style: solid;
+    border-width: 25px;
+    border-color: #ebb94d transparent transparent transparent;
+    position: relative;
+    top: 63px;
+  }
+}
+
+.answer {
+  padding-top: 40px;
+
+  .possible {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .third-person {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 32px;
+  }
+
+  .messagefromcompany {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .message-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+
+    .message {
+      display: flex;
+      justify-content: center;
+      width: 780px;
+      margin: 0 auto 35px;
+
+      &-img img {
+        width: 245px;
+        height: auto;
+        border: 2px solid #ebb94d;
+      }
+
+      &-txt {
+        text-align: left;
+        margin: 15px 0 0 30px;
+
+        .content {
+          font-family: "メイリオ";
+          font-weight: 400;
+          font-style: italic;
+          font-size: 18px;
+          line-height: 29px;
+          letter-spacing: 1.5px;
+          color: #777;
+          margin-bottom: 8px;
+        }
+
+        .name {
+          font-family: "メイリオ";
+          font-weight: 400;
+          font-style: italic;
+          font-size: 15px;
+          line-height: 24px;
+          letter-spacing: 1.5px;
+          color: #777;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.contents {
+  background-image: url(../images/bg/classbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 70px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  h2 + p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 50px;
+  }
+
+  .table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .table {
+      width: 375px;
+      background-color: #016ea9;
+      padding-bottom: 3px;
+      border-radius: 5px;
+      margin: 0 15px;
+
+      p {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 1.5px;
+        color: #fff;
+        margin: 17px 0 15px;
+      }
+
+      ul {
+        width: 371px;
+        background-color: #fff;
+        margin: 0 auto;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        li {
+          font-family: "メイリオ";
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: 1.5px;
+          color: #000;
+          padding: 10px 0;
+          border-top: 1px dotted #e5e5e5;
+
+          &:first-of-type {
+            border-top: none;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.risk0 {
+  background-color: #016ea9;
+  padding: 40px 0;
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+  }
+}
+
+.course-flow {
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 50px;
+  }
+
+  h2 + img {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .flow-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+
+    .flow {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: #fef5e0;
+      padding: 10px 35px;
+      border-radius: 10px;
+
+      &-icon {
+        width: 205px;
+        padding: 20px;
+
+        .mt40 {
+          margin-top: 40px;
+        }
+
+        p {
+          font-family: "メイリオ";
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 29px;
+          letter-spacing: 1.5px;
+          color: #333;
+          margin-top: 12px;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      &-txt {
+        text-align: left;
+        width: 930px;
+        margin-top: 10px;
+
+        .bold {
+          font-family: "メイリオ";
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: 1.5px;
+          color: #333;
+          margin: 20px 0;
+        }
+
+        .light {
+          font-family: "メイリオ";
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: 1.5px;
+          color: #333;
+          margin: 20px 0;
+        }
+      }
+    }
+
+    & > img {
+      display: block;
+      width: calc(100% - 410px);
+      margin: 0 auto;
+    }
+  }
+}
+
+.why-bangkok {
+  background-image: url(../images/bg/bangkokbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  padding: 80px 0;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin: 20px 0;
+  }
+
+  h2 + p {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    margin: 20px 0;
+
+    li {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 1.5px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+  }
+
+  p:last-of-type {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+}
+
+.join-gift {
+  background-color: #f7c23c;
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  h2 + p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #333;
+
+    span {
+      color: #fff;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: 1.5px;
+    color: #333;
+    background-color: #f7c23c;
+    position: relative;
+    top: 66px;
+    padding: 0 15px;
+  }
+
+  .gift-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 40px 40px;
+    border: 2px solid #fff;
+    margin-top: 50px;
+
+    .gift {
+      display: table;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #fff;
+      padding: 0 15px;
+
+      .txt {
+        display: table-cell;
+        vertical-align: middle;
+
+        .num {
+          font-family: "メイリオ";
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 38px;
+          letter-spacing: 1.5px;
+          color: #ebb94d;
+          margin-bottom: 10px;
+        }
+
+        .content {
+          font-family: "メイリオ";
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: 1.5px;
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.not-volunteer {
+  background-image: url(../images/bg/specialdetail.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 45px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 15px;
+    @include brackets(15px, 15px, #fff);
+  }
+}
+
+.engineer-message {
+  padding: 60px 0;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 35px;
+  }
+
+  h2 + p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  .message-wrapper {
+    width: 890px;
+    display: flex;
+    margin: 0 auto;
+
+    .message-img {
+      width: 192.5px;
+      margin: 0 15px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .message-txt {
+      width: 640px;
+      margin: 0 15px;
+      text-align: left;
+
+      p, li {
+        font-family: "メイリオ";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        color: #333;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      .mb30 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.form {
+  background-color: #ebb94d;
+  padding: 60px 0 40px;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 31.6px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input, textarea, button {
+      font-family: "メイリオ";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0;
+      color: #333;
+      width: 100%;
+      max-width: 910px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 auto 25px;
+    }
+
+    input {
+      height: 55px;
+    }
+
+    textarea {
+      height: 100px;
+      margin: 21px auto 40px;
+    }
+
+    button[type = "submit"] {
+      font-family: "メイリオ";
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 37px;
+      letter-spacing: 23px;
+      color: #fff;
+      background-color: #da6b64;
+      border-radius: 50px;
+      text-indent: 23px; //中央揃えの改善
+    }
+  }
+}
+
+.faq {
+  padding: 60px 0;
+  text-align: left;
+
+  h2 {
+    font-family: "メイリオ";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  ul {
+    .faq-list-item {
+      position: relative;
+
+      .question {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: 1.5px;
+        color: #000;
+        padding: 20px;
+        border: 1px solid #e5e5e5;
+
+        .fa-question-circle {
+          font-size: 18px;
+          color: #016ea9
+        }
+
+        span {
+          position: absolute;
+          right: 20px;
+
+          .fa-chevron-up {
+            color: #e5e5e5;
+          }
+        }
+      }
+
+      .answer {
+        font-family: "メイリオ";
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 1.5px;
+        color: #333;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #ececec;
+  padding: 40px 0 20px;
+
+  p {
+    font-family: "メイリオ";
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    color: #333;
+
+    small {
+      font-size: 10px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 15px;
+    }
+
+    &:last-of-type {
+      margin: 32px 0 5px;
+    }
+
+    a {
+      color: #337ab7;
+
+      &:hover {
+        color: #23527c;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .sns-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    button {
+      height: 20px;
+      font-family: "メイリオ";
+      font-size: 11px;
+      line-height: 18px;
+      letter-spacing: 0;
+      color: #fff;
+      padding: 0 8px;
+      border-radius: 3px;
+      margin: 0 2px;
+    }
+
+    .twitter {
+      font-weight: 500;
+      background-color: #1b95e0;
+
+      &:hover {
+        background-color: #0c7abf;
+      }
+
+      i {
+        margin-right: 3px;
+      }
+    }
+
+    .fav {
+      font-weight: bold;
+      background-color: #1877F2;
+      vertical-align: middle;
+
+      img {
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+
+    .share {
+      font-weight: bold;
+      background-color: #1877F2;
+    }
+  }
+}

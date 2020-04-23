@@ -11,7 +11,7 @@ $(function() {
     }
   })
   backBtn.click(function() {
-    $('html, body').animate({
+    $('html, body').stop().animate({
       'scrollTop': 0
     }, 500)
     return (false);
@@ -23,22 +23,22 @@ $(function() {
     var headerHeight = $('#header').height();
     var position = form.offset().top - headerHeight + 30;
 
-    $('html, body').animate({
+    $('html, body').stop().animate({
       'scrollTop': position
     }, 500)
   });
 
   // アコーディオンの開閉処理
-  $('.faq-list-item').click(function() {
+  $('.faq-list-item').stop().click(function() {
     var $answer = $(this).find('.answer');
 
     if ($answer.hasClass('open')) {
       $answer.removeClass('open');
-      $answer.slideUp();
+      $answer.stop().slideUp();
       $(this).find('span').html('<i class="fas fa-chevron-down"></i>');
     } else {
       $answer.addClass('open');
-      $answer.slideDown();
+      $answer.stop().slideDown();
       $(this).find('span').html('<i class="fas fa-chevron-up"></i>');
     }
   });
@@ -51,12 +51,12 @@ $(function() {
     if (width <= spWidth) {
       if ($txt.hasClass('open')) {
         $txt.removeClass('open');
-        $txt.slideUp();
+        $txt.stop().slideUp();
         $(this).find('span').html('<i class="fas fa-chevron-down"></i>');
       } else {
         $('.open').removeClass('open').slideUp().prev().find('span').html('<i class="fas fa-chevron-down"></i>');
         $txt.addClass('open');
-        $txt.slideDown();
+        $txt.stop().slideDown();
         $(this).find('span').html('<i class="fas fa-chevron-up"></i>');
       }
     }

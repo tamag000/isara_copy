@@ -15,22 +15,24 @@
   <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
   <!-- js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v6.0"></script>
 </head>
 
 <body>
-  <div class="back-btn">
+  <div class="back-btn" id="back-btn">
     <a href="#"><i class="fas fa-chevron-up"></i></a>
   </div>
-  <header class="header">
+  <header class="header" id="header">
     <div class="container">
       <div class="header-logo">
         <img src="./images/img/isaralogo.png" alt="ヘッダーロゴ">
         <p>バンコクのノマドエンジニア育成講座</p>
       </div>
       <div class="header-form">
-        <a href="#">お問い合わせ / 資料請求はこちら</a>
+        <button class="form-btn">お問い合わせ / 資料請求はこちら</button>
       </div>
-      <div class="header-document">
+      <div class="header-document form-btn">
         <img src="./images/img/form.png" alt="">
         <p>資料請求</p>
       </div>
@@ -45,14 +47,14 @@
   <div class="trytoget-skill">
     <p>まずは２０日間で、<br>月１０万円稼げるスキルを手にいれよう。</p>
     <p><span>※受講料金は実質０円です。詳しくは資料請求をどうぞ。</span></p>
-    <a href="#">お問い合わせ＆資料請求は<br class="brsp">こちら</a>
+    <button class="form-btn">お問い合わせ＆資料請求は<br class="brsp">こちら</button>
     <p class="graduates">第６期生：2019年11月25日 ~ 2019年12月14日<br class="brsp">＊締め切りました</p>
     <p class="graduates">第７期生：2020年2月17日 ~ 2019年3月7日<br class="brsp">＊締め切りました</p>
     <p class="graduates">第8期生：2020年4月〜5月ごろを予定<br class="brsp">＊資料請求受付中です</p>
     <div class="sns-wrapper">
-      <button type="button" class="twitter"><i class="fab fa-twitter"></i>ツイート</button>
-      <button type="button" class="fav"><img src="./images/img/good.png" alt="">いいね！</button>
-      <button type="button" class="share">シェア</button>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
     </div>
   </div>
   <div class="really-freedom">
@@ -293,7 +295,7 @@
             <p>Skypeで<br class="brno">事前コンサル</p>
             <span><i class="fas fa-chevron-up"></i></span>
           </div>
-          <div class="flow-txt">
+          <div class="flow-txt open" style="display: block">
             <p class="bold">現在のスキルの状況、パソコンの環境説明、渡航での注意点を話します。</p>
             <p class="bold">簡単なテストあり</p>
             <p class="light">iSaraでは受講料を稼げることを保障しています。従って、事前コンサル時点で簡単なテストを実施し、場合によってはお断りをしております。（テストの内容はPCの基礎知識に関するテストですので、普段からパソコンを利用する方でしたら問題ありません。テストはもちろん無料ですので、まずはお問い合わせください。）</p>
@@ -304,7 +306,7 @@
           <div class="flow-icon">
             <img src="./images/img/preworks.png" alt="" class="mt40">
             <p>事前課題の提出</p>
-            <span><i class="fas fa-chevron-up"></i></span>
+            <span><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="flow-txt">
             <p class="bold">出発前の１ヶ月前に事前課題を送ります。</p>
@@ -317,7 +319,7 @@
           <div class="flow-icon">
             <img src="./images/img/flight.png" alt="">
             <p>現地に渡航</p>
-            <span><i class="fas fa-chevron-up"></i></span>
+            <span><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="flow-txt">
             <p class="bold">到着日には空港でお出迎えし、初日のオリエンテーションを行います。<br class="brno">滞在先は空港からすぐの出来たてシェアハウス。美味しいタイ料理などもご紹介します。</p>
@@ -329,7 +331,7 @@
           <div class="flow-icon">
             <img src="./images/img/personwithlight.png" alt="">
             <p>実案件を<br class="brno">通して学ぶ</p>
-            <span><i class="fas fa-chevron-up"></i></span>
+            <span><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="flow-txt">
             <p class="bold">現役フリーランスが抱える案件に加え、クラウドソーシングを使って実案件をこなします。</p>
@@ -342,7 +344,7 @@
           <div class="flow-icon">
             <img src="./images/img/jobsupport.png" alt="">
             <p>帰国後の仕事獲得<br class="brno">サポート付き</p>
-            <span><i class="fas fa-chevron-up"></i></span>
+            <span><i class="fas fa-chevron-down"></i></span>
           </div>
           <div class="flow-txt">
             <p class="bold">経験年数の少ないフリーランスが高単価で継続的に仕事受注するコツ、それがチームを組むことです。</p>
@@ -418,7 +420,7 @@
       </div>
     </div>
   </div>
-  <div class="form">
+  <div class="form" id="form">
     <h2><i class="far fa-file-alt"></i>資料請求フォーム</h2>
     <p>まずは無料で資料請求からどうぞ。</p>
     <form action="">
@@ -435,90 +437,90 @@
       <ul>
         <li class="faq-list-item">
           <h3 class="question"><i class="far fa-question-circle"></i>プログラミングスキルは必要ですか？<span><i class="fas fa-chevron-up"></i></span></h3>
-          <div class="answer">
+          <div class="answer" style="display: block;">
             <p>いいえ、必要ありません。しかし、iSaraでは参加費以上の金額が稼げることを保障しています。 従って、事前通話面談時点で簡単なテストを実施し、場合によってはお断りをしております。この点だけはご了承ください。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>参加費以上に稼げなかったらどうなりますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>参加費以上に稼げなかったらどうなりますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>参加費である258,000円以上の金額をトータルで稼ぐまで、無期限でサポート延長いたします。（講座参加後、週30時間以上の実践をすることと、週１回の実践報告をすることが延長条件です。）きちんと学び実践すれば、フリーランスでも収入を作ることは十分に可能です。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>滞在中の宿泊先はどうなりますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>滞在中の宿泊先はどうなりますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>宿泊費用が必要ですが、iSara提携のホステルに宿泊することになりますので心配はありません。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>滞在中の食事はどうなりますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>滞在中の食事はどうなりますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>拠点となる新築シェアハウスの周辺に、50バーツ程度の（160円）安価な飲食店が多数あります。 日本食レストランもありますし、出前を取ることも可能です。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>追加でかかる費用はありますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>追加でかかる費用はありますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>宿泊費（トータル20000円）と食費（一食150円程度）くらいです。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>就職、転職はできますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>就職、転職はできますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>DODAの調査によると、2017年のエンジニアの求人倍率は7.5倍です。これは、人材不足が叫ばれる医療業界（医師：6倍、看護師：3倍）よりも高い数値です。ですのできちんとしたスキルを身につけることができれば、就職・転職には困らないはずです。元リクルートの転職のプロも運営スタッフとして参加しています。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>フリーランスにならなければならないのですか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>フリーランスにならなければならないのですか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>いいえ、必ずフリーランスにならないといけないわけではありません。 実際に過去の卒業生の方の進路も、独立、副業として続ける、就職するなど様々です。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>ノマドワーカー的に世界を旅しながら働きたいです。可能ですか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>ノマドワーカー的に世界を旅しながら働きたいです。可能ですか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>きちんと努力し、スキルを身に着けることができれば可能です。 iSaraは、「好きなときに働き、好きなときに遊ぶ」という人生を送れる人を増やすために開講しました。 ちなみに、講師は全員ノマドワーカーとして、働きながら自由に世界中を旅しています。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>学ぶプログラミング言語はなんですか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>学ぶプログラミング言語はなんですか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>HTML / CSS / PHPを学びます。どの言語も需要が高いです。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>将来的にwebサービス、アプリ、メディアを作りたいです。<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>将来的にwebサービス、アプリ、メディアを作りたいです。<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>経験してる講師がいますよ。大丈夫です。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>次回開催の予定はありますか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>次回開催の予定はありますか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>未定です。まずはお問合せください。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>海外に出るのが初めてで不安です。<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>海外に出るのが初めてで不安です。<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>講師陣が現地での生活をサポートしますので安心してください。ただしパスポート取得は必要です。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>タイ語、英語が一切話せません。参加可能でしょうか。<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>タイ語、英語が一切話せません。参加可能でしょうか。<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>タイ語スタッフ、英語スタッフがいるのでOKです。日本人、タイ人スタッフがおりますので、期間中のトラブル対応の心配は必要ありません。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>治安はどうですか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>治安はどうですか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>バンコクは、東南アジアや南アジアの他の国の都市部と比べると、街中も整備されており、非常に治安の良い街です。日本ほどではないですが、世界でも非常に治安の良い国として知られています。</p>
           </div>
         </li>
         <li class="faq-list-item">
-          <h3 class="question"><i class="far fa-question-circle"></i>パソコンは必要ですか？<span><i class="fas fa-chevron-up"></i></span></h3>
+          <h3 class="question"><i class="far fa-question-circle"></i>パソコンは必要ですか？<span><i class="fas fa-chevron-down"></i></span></h3>
           <div class="answer">
             <p>はい。ノートPCのご用意が必要です。</p>
           </div>
@@ -528,14 +530,13 @@
   </div>
   <footer>
     <p>バンコクのノマドエンジニア育成講座、iSara[イサラ]</p>
-    <p><small>Copyright ©︎ <a href="#">iSara</a> All Rights Reserved.</small>
-      <p>
-        <div class="sns-wrapper">
-          <button type="button" class="twitter"><i class="fab fa-twitter"></i>ツイート</button>
-          <button type="button" class="fav"><img src="./images/img/good.png" alt="">いいね！</button>
-          <button type="button" class="share">シェア</button>
-        </div>
-        <p>Designed by <a href="#">Maya Ogi</a> / Developed by <a href="#">Kentaro Koga</a></p>
+    <p><small>Copyright ©︎ <a href="https://isara.life/">iSara</a> All Rights Reserved.</small></p>
+    <div class="sns-wrapper">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+    </div>
+    <p>Designed by <a href="https://www.facebook.com/maya.ogi.3" target="_blank">Maya Ogi</a> / Developed by <a href="https://www.facebook.com/kentaro.koga.7" target="_blank">Kentaro Koga</a></p>
   </footer>
   <!-- js -->
   <script src="js/script.js"></script>

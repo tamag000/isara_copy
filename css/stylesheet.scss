@@ -37,6 +37,10 @@ body {
   text-align: center;
 }
 
+.wrapper {
+  overflow-y: hidden;
+}
+
 .brsp {
   display: none;
 }
@@ -1335,6 +1339,9 @@ body {
         span {
           position: absolute;
           right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+
 
           .fa-chevron-down,
           .fa-chevron-up {
@@ -1379,7 +1386,7 @@ footer {
     }
 
     &:last-of-type {
-      margin: 32px 0 5px;
+      margin: 32px 0 0;
     }
 
     a {
